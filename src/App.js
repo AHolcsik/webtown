@@ -1,6 +1,6 @@
-/* eslint-disable no-unused-expressions */
 import Masonry from "./components/Masonry";
 import Timeline from "./components/Timeline";
+import Button from "react-bootstrap/Button";
 
 function App() {
   const setRTL = () => {
@@ -19,15 +19,26 @@ function App() {
   };
 
   return (
-    <>
-      <button onClick={chageDirection}>Change language</button>
-      <div>
+    <div className="container mt-4">
+      <div className="header">
+        <Button
+          onClick={chageDirection}
+          className="btn btn-outline-secondary mb-5"
+        >
+          Change language
+        </Button>
+        <div className="title">
+          <h1>Financial sector development timeline</h1>
+          <a href="#">View all</a>
+        </div>
+
+        <hr />
+      </div>
+      <div className="mb-5">
         <Timeline />
       </div>
-      <div className="container">
-        <Masonry />
-      </div>
-    </>
+      <Masonry />
+    </div>
   );
 }
 
